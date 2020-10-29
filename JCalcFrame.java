@@ -1,5 +1,4 @@
-// File name: CtoF.java
-// The program gets two numbers from the user and displays the result
+//File name: JCalcFrame.java
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -8,23 +7,28 @@ public class JCalcFrame extends JFrame implements ActionListener
 {
   FlowLayout flow = new FlowLayout();
 
-  JLabel num1 = new JLabel("Enter Farenheit degree:      ");
+  //creates button to enter farenheit value
+  JLabel num1 = new JLabel("Enter Fahrenheit degree:      ");
+
+  //user input text field
   JTextField number1 = new JTextField(6);
 
   JButton calcButton = new JButton("Calculate temperature (°C)");
+  
   JButton exitButton = new JButton("Exit");
   JButton reset = new JButton("Reset");
 
-  JLabel blankSpaces1 = new JLabel("                 ");
-  JLabel blankSpaces2 = new JLabel("                                          ");
+  JLabel blankSpaces1 = new JLabel("         ");
+  JLabel blankSpaces2 = new JLabel("         ");
   JLabel result = new JLabel("The total is ");
   JLabel sum = new JLabel("");
 
   public JCalcFrame()
   {
+    //creates the general look of the UI
     Container con = getContentPane();
 
-    con.setLayout(flow);// places components in a row
+    con.setLayout(flow);
 
     con.add(num1);
 
@@ -57,9 +61,11 @@ public class JCalcFrame extends JFrame implements ActionListener
 
         double n1 = Double.parseDouble(num1);
 
-        double total = (5/9) * (n1 - 32);
-        // we need to convert the data type of the total to String
-        String output = "" + total;//we should convert the 
+        //calculates Farenheit to Celsius
+        double total = 0.5555555556 * (n1 - 32.0);
+ 
+        //converts total to string
+        String output = "" + total;
         sum.setText(output);
       }
       else
